@@ -1,0 +1,106 @@
+MariaDB [(none)]> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| lab_pwl            |
+| lab_sbd            |
+| laravel            |
+| laravel_8_blog     |
+| mysql              |
+| opensea            |
+| performance_schema |
+| phpmyadmin         |
+| proweb             |
+| tee                |
+| tubes_sem1         |
+| tubespwl           |
+| tubespwlbersama    |
+| tubespwll          |
+| tubespwltaufiq     |
+| wpu_blog           |
++--------------------+
+17 rows in set (0.010 sec)
+
+MariaDB [(none)]> CREATE DATABASE task_manager;
+Query OK, 1 row affected (0.001 sec)
+
+MariaDB [(none)]> USE task_manager;
+Database changed
+MariaDB [task_manager]> CREATE TABLE task_categories(
+    -> id char (36) Primary Key,
+    -> category_name varchar(255),
+    -> description varchar(255),
+    -> created_at timestamp,
+    -> updated_at timestamp
+    -> );
+ERROR 1067 (42000): Invalid default value for 'updated_at'
+MariaDB [task_manager]> CREATE TABLE task_categories(
+    -> id char (36) Primary Key,
+    -> category_name varchar(255),
+    -> description varchar(255),
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')' at line 5
+MariaDB [task_manager]> CREATE TABLE task_categories(
+    -> id char (36) Primary Key,
+    -> category_name varchar(255),
+    -> description varchar(255)
+    -> );
+Query OK, 0 rows affected (0.047 sec)
+
+MariaDB [task_manager]> CREATE TABLE task_dailies(
+    -> id char(36
+    -> )
+    -> user_id varchar(255)
+    -> plan_id varchar(255)
+    -> task_status enum('Pending','Process','Finished','Canceled')
+    -> task_complete_date date
+    -> user_verify_id varchar(255)
+    -> task_prove varchar(255)
+    -> task_comments longtext
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'varchar(255)
+plan_id varchar(255)
+task_status enum('Pending','Process','Finis...' at line 4
+MariaDB [task_manager]> CREATE TABLE task_dailies(
+    -> id char (36) Primary Key,
+    -> user_id varchar(255)
+    -> ,
+    -> plan_id varchar(255),
+    -> task_status enum('Pending','Process','Finished','Canceled'),
+    -> task_complete_date date,
+    -> user_verify_id varchar(255),
+    -> task_prove varchar(255),
+    -> task_comments longtext);
+Query OK, 0 rows affected (0.047 sec)
+
+MariaDB [task_manager]> create table task_indicators
+    -> (
+    -> id char (36) Primary Key,
+    -> indicator_name varchar (255),
+    -> output_value int(11),
+    -> year year(4),
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')' at line 7
+MariaDB [task_manager]> create table task_indicators(
+    -> id char (36) Primary Key,
+    -> indicator_name varchar (255),
+    -> output_value int(11),
+    -> year year(4)
+    -> );
+Query OK, 0 rows affected (0.030 sec)
+
+MariaDB [task_manager]> create table task_persons(
+    -> id char (36) Primary Key,
+    -> task_id varchar(255),
+    -> teams varchar(255),
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')' at line 5
+MariaDB [task_manager]> create table task_persons(
+    -> id char (36) Primary Key,
+    -> task_id varchar(255),
+    -> teams varchar(255)
+    -> );
+Query OK, 0 rows affected (0.030 sec)
+
+MariaDB [task_manager]> notee
